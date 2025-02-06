@@ -3,5 +3,11 @@
 
 int main(void)
 {
-    printf("Hello world\n");
+    // char *memory_leak = malloc(sizeof(char) * 10);
+    // printf("Hello world\n");
+
+
+    int x = "hola";
+
+    printf("%d\n", x);
 }

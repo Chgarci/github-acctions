@@ -10,4 +10,6 @@ int main(void)
     int x = "hola";
 
     printf("%d\n", x);
+
+    y = 10;
 }

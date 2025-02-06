@@ -1,0 +1,23 @@
+name: valgrind
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  memory-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: sudo apt update && sudo apt install -y valgrind build-essential
+
+      - name: Compile with Make
+        run: make
+
+      - name: Run Valgrind
+        run: valgrind --leak-check=full --show-leak-kinds=all ./program

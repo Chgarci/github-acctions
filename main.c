@@ -4,12 +4,12 @@
 int main(void)
 {
     // char *memory_leak = malloc(sizeof(char) * 10);
-    // printf("Hello world\n");
+    printf("Hello world\n");
 
 
-    int x = "hola";
+    // int x = "hola";
 
-    printf("%d\n", x);
+    // printf("%d\n", x);
 
-    y = 10;
+    // y = 10;
 }

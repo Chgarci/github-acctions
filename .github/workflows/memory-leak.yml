@@ -20,4 +20,9 @@ jobs:
         run: make
 
       - name: Run Valgrind
-        run: valgrind --leak-check=full --show-leak-kinds=all ./program
+        run: |
+          valgrind --leak-check=full --show-leak-kinds=all ./program 2>&1 | tee valgrind_output.txt
+          if grep -q "ERROR SUMMARY: [^0] errors" valgrind_output.txt; then
+            echo "Memory errors detected! Failing the job."
+            exit 1
+          fi

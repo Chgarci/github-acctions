@@ -16,9 +16,6 @@ jobs:
       - name: Install dependencies
         run: sudo apt update && sudo apt install -y valgrind build-essential
 
-      - name: Compile with Make
-        run: make
-
       - name: Run Valgrind
         run: |
           valgrind --leak-check=full --show-leak-kinds=all ./program 2>&1 | tee valgrind_output.txt
